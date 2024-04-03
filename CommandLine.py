@@ -28,38 +28,38 @@ def usercommand(self):
 
         if z == "about":
             # Shows About Info
-            print("""CommandLine is an Opensource Program by Muhammad Sami Furqan.""")
+            print("""CommandLine is an opensource program by Muhammad Sami Furqan.""")
 
         # Shows License Info.
         elif z == "license":
             import getpass
             print(f"""
-This Software is licensed to {getpass.getuser()}.
+This software is licensed to {getpass.getuser()}.
 |------------------------------------------------------|   
 |              LICENSE INFO                            |
 |              -------------                           |    
 |-> From Aisoft-co.                                    |
-|-> CLI Based Software.                                |  
-|-> Open-Source.                                       |
-|-> Version 2.0.8                                      |
+|-> CLI based software.                                |  
+|-> Open-source.                                       |
+|-> Version 2.0.9	                                     |
 |-> Language : Python3.                                | 
-|-> For Pentesters and for Ethical Hackers.            | 
-|-> Type : Terminal.                                   |
+|-> For pentesters and for ethical hackers.            | 
+|-> Type: Terminal. 	                                  |
 |------------------------------------------------------|
 """)
         # General commands
-        # whoami -> Tells The Name of the current user.
+        # whoami -> Tells the name of the current user.
         elif z == "whoami":
             import getpass
             print(getpass.getuser())
 
-        # Exiting Console
+        # Exiting console
 
         elif z == "exit" or z == "e":
             print("Exiting Commandline")
             quit()
 
-        # For Clearing Console
+        # For clearing console
         elif z == "clear" or z == "cls":
             import os
             # Checks about OS "REQUIRED FOR CLEARING"
@@ -106,7 +106,7 @@ This Software is licensed to {getpass.getuser()}.
         #  Delete a file:
         elif z == "del.file":
 
-            #!/usr/bin/python
+            #!C:\Program Files\CommandLine\
             import os
 
             ## Get input ##
@@ -115,9 +115,9 @@ This Software is licensed to {getpass.getuser()}.
             ## Try to delete the file ##
             if myfile == "CommandLine.py":
                 askdelfile = input(
-                    "Do you want to delete this console from pc")
+                    "Do you want to delete this console from your pc?")
                 if askdelfile == "yes":
-                    print("ok removing..")
+                    print("ok. removing..")
                     os.remove(myfile)
                 else:
                     pass
@@ -138,13 +138,13 @@ This Software is licensed to {getpass.getuser()}.
                 k.close()
                 print(f"The File named {User3} is updated successfully!")
             except:
-                print(f"{User3} <-- File Not Found!")
+                print(f"{User3} <-- File Not found!")
         # Rename a file
         elif z == "rename.file":
             try:
                 import os
 
-                oldfilename1 = input("Enter Old File Name: ")
+                oldfilename1 = input("Enter old file name: ")
                 oldextensionname = input("Enter Old File Exetension: ")
                 newfilename1 = input("Enter New File Name: ")
                 newextensionname = input("Enter New Extension Name: ")
