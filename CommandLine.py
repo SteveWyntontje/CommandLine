@@ -542,7 +542,7 @@ This software is licensed to {getpass.getuser()}.
             print(show_tasks)
         elif z == "tasks.kill":
             import os
-            user_taskkill = input("Enter Task Name to kill : ")
+            user_taskkill = input("Enter task name to kill : ")
             os.system("taskkill /im "+user_taskkill)
 #-------------------Hacking Scripts---------------------------------#
         # This will detect IP's and return with the info of it
@@ -550,8 +550,8 @@ This software is licensed to {getpass.getuser()}.
             import requests
             init(convert=True)
             print(f"""{Fore.BLUE}Select Options:
-[A] Track by IP Address - Example [111.111.11.1]
-[B] Track by Host Name - Example [www.example.com]
+[A] Track by IP-address - Example [111.111.11.1]
+[B] Track by Host name - Example [www.example.com]
 [C] Back
 """)
             print(
@@ -561,7 +561,7 @@ This software is licensed to {getpass.getuser()}.
             if command == "A":
                 # This takes ip from the user and get info from http://ip-api.com/json/{0}
                 print(Fore.RESET)
-                user_ip = input(Fore.BLUE+"ENTER IP ADDRESS: ") #takes the input
+                user_ip = input(Fore.BLUE+"ENTER IP-ADDRESS: ") #takes the input
                 url = "http://ip-api.com/json/{0}"
                 response = requests.get(url.format(user_ip)).json()
                 print(Fore.RESET)
@@ -582,8 +582,8 @@ This software is licensed to {getpass.getuser()}.
             # This prints the options that are available 
             elif command == "list":
                 print(f"""{Fore.BLUE}Availaible Options:
-         [A] Track by IP Address - Example [111.111.11.1]
-         [B] Track by Host Name - Example [www.example.com]
+         [A] Track by IP-address - Example [111.111.11.1]
+         [B] Track by Host name - Example [www.example.com]
          [C] Exit (Exits the program)
          """)
             elif command == "C":
@@ -591,7 +591,7 @@ This software is licensed to {getpass.getuser()}.
                 pass
             else:
                 print(Fore.RESET)
-                print(Fore.RED+"Wrong Command! Try Again.")
+                print(Fore.RED+"Wrong command! Try again.")
         # download youtube videos
         elif z == "pkg.youtube": # This basically uses a module called youtube_dl 
                                  # to download youtube videos 
@@ -612,15 +612,15 @@ This software is licensed to {getpass.getuser()}.
                 def dwl_vid():
                     youtube_title_finder()
                     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                        mess1 = "The youtube video is being downloaded\n"+ title 
+                        mess1 = "The YouTube video is being downloaded\n"+ title 
                         notification_c(mess1)
                         ydl.download([zxt])
-                        mess4 = "The youtube video is successfully downloaded\n"+ title 
+                        mess4 = "The YouTube video is successfully downloaded\n"+ title 
                         notification_c(mess4)
 
                 channel = 1
                 while (channel == int(1)):
-                    link_of_the_video = input("Enter Video URL: ")
+                    link_of_the_video = input("Enter video URL: ")
                     zxt = link_of_the_video.strip()
 
                     dwl_vid()
@@ -638,7 +638,7 @@ This software is licensed to {getpass.getuser()}.
             
             # url input from user
             yt = YouTube(
-                str(input("Enter Video URL : ")))
+                str(input("Enter video URL : ")))
 
             # extract only audio
             video = yt.streams.filter(only_audio=True).first()
@@ -648,11 +648,11 @@ This software is licensed to {getpass.getuser()}.
             destination = str(input(">> ")) or '.'
 
             # download the file
-            mess3 = "The youtube MP3 is being downloaded\n"+ title 
+            mess3 = "The YouTube MP3 is being downloaded\n"+ title 
             notification_c(mess3)
             out_file = video.download(output_path=destination)
             
-            mess2 = "The youtube MP3 is successfully downloaded\n"+ title 
+            mess2 = "The YouTube MP3 is successfully downloaded\n"+ title 
             notification_c(mess2)
             # save the file
             base, ext = os.path.splitext(out_file)
@@ -665,33 +665,33 @@ This software is licensed to {getpass.getuser()}.
         elif z == "pkg.download":
             try:
                 import wget
-                url1 = input("Enter file url: ")
+                url1 = input("Enter file URL: ")
                 while True:
                     try:
-                        os.mkdir("My Files")
+                        os.mkdir("My files")
                         break
                     except FileExistsError:
                         break
-                wget.download(url1 , out="My Files")
+                wget.download(url1 , out="My files")
                 print("Download is completed successfully")
             except:
-                print(f"{url1} <-- Wrong Package!")
+                print(f"{url1} <-- Wrong package!")
 
         # open files
         elif z == "open.file": # This uses simple os module to start files.
             try:
                 import os
-                askusrabtfile = input("Enter File Name: ")
+                askusrabtfile = input("Enter file name: ")
                 os.startfile(askusrabtfile) # os.startfile start file by taking the location or name.
                 print(f"The file named {askusrabtfile} is opened successfully")
             except:
-                print(f"{askusrabtfile} <-- File not Found!")
+                print(f"{askusrabtfile} <-- File not found!")
 
         # Shutdown the computer
         elif z == "shutdown.s": # This use os module to shutdown computer.
             try:
                 import os
-                oc = input("Do you want to Shutdown this device y or n : ")
+                oc = input("Do you want to shutdown this device [y or n]: ")
                 if oc == "y":
                     os.system("shutdown /s") # uses cmd to shutdown computer by os.system("Shutdown /s").
                     notification_c("Your PC will shutdown soon.")
@@ -706,11 +706,11 @@ This software is licensed to {getpass.getuser()}.
         elif z == "restart.s": # This use os module to restart computer.
             try:
                 import os
-                g = input("Do you want to restart this device y or n: ") 
+                g = input("Do you want to restart this device [y or n]: ") 
                 if g == "y":
                     os.system("shutdown /r") # uses cmd to restart computer by os.system("Shutdown /r").
                     # /r stands for restart.
-                    notification_c("Your PC will Restart soon.")
+                    notification_c("Your PC will restart soon.")
                 elif g == "n":
                     print("Ok")
                 else:
@@ -722,10 +722,10 @@ This software is licensed to {getpass.getuser()}.
         elif z == "logout.s":  # This use subprocesse module to logout computer.
             try:
                 import subprocess
-                fl = input("Do you want to logout y or n : ")
+                fl = input("Do you want to logout [y or n] : ")
                 if fl == "y":
                     subprocess.check_output("shutdown /l").decode('utf-8') 
-                    notification_c("Your PC will Logout soon.")
+                    notification_c("Your PC will logout soon.")
                 elif z == "n":
                     print("Ok")
                 else:
@@ -738,7 +738,7 @@ This software is licensed to {getpass.getuser()}.
             try:
                 import subprocess
                 userwin = input(
-                    "Do you want to remotely shutdown all the computers y or n :")
+                    "Do you want to remotely shutdown all the computers [y or n]:")
                 if userwin == "y":
                     subprocess.check_output("shutdown -i").decode('utf-8')
                 elif userwin == "n":
@@ -758,7 +758,7 @@ This software is licensed to {getpass.getuser()}.
             import subprocess
             proc3 = subprocess.check_output("ipconfig /renew").decode('utf-8')
             print(proc3)
-            notification_c("All Adapters are renewed successfully.")
+            notification_c("All adapters are renewed successfully.")
 
         # Release all adapters
         elif z == "wlan.release":
@@ -766,7 +766,7 @@ This software is licensed to {getpass.getuser()}.
             proc34 = subprocess.check_output(
                 "ipconfig /release").decode('utf-8')
             print(proc34)
-            notification_c("All Adapters are released successfully.")
+            notification_c("All adapters are released successfully.")
 
         # Check if Url exists
         elif z == "check.urlexists":
@@ -776,7 +776,7 @@ This software is licensed to {getpass.getuser()}.
                 response = requests.get("http://"+askusrabturlex)
              
             except requests.ConnectionError as exception:
-                print(f"{askusrabturlex} Not Exists!")
+                print(f"{askusrabturlex} don't exist!")
         elif z == "update.info":
             from bs4 import BeautifulSoup
             import requests
@@ -821,7 +821,7 @@ This software is licensed to {getpass.getuser()}.
                     print(wifi_list[x])
                     notification_c(f"The Passwords are found! {wifi_list[x]}")
                     savepass = input(
-                        "Do you want to save these passwords y or n :")
+                        "Do you want to save these passwords [y or n] :")
                     if savepass == "y":
                         f = open('WlanPasswords.txt', 'w')
                         f.write(str(wifi_list[x]))
@@ -831,14 +831,14 @@ This software is licensed to {getpass.getuser()}.
                     else:
                         print("Ok")
             except:
-                print("Unknown Error was Found!")
+                print("Unknown error was Found!")
         # show script commands
         elif z == "show.scripts":
-            print(""" The Availaible scripts are :
+            print(""" The availaible scripts are :
 |------------------------------------------------------------|
 |[*] "scanfix" starts windows fix kit.                       |
-|[*] "ddos.start" Starts an ddos Attack.                     |                                                       
-|[*] "host.getip" Get ip address of host by host url.        |      
+|[*] "ddos.start" Starts an DDoS Attack.                     |                                                       
+|[*] "host.getip" Get IP-address of host by host url.        |      
 |[*] "ip.get" Gets host name from ip.                        |
 |[*] "ip.info" To get IP info.                               |
 |[*] "wlan/show.pass" Show Wifi passwords.                   |
