@@ -1,7 +1,7 @@
 
 # Command Line
 
-Command-Line is an Open-Source Software for Pentesters and Ethical Hackers it contains many Functionalities which helps Ethical Hackers. It is CLI Based Application use for checking Networks and IP's it also supports functionalities like downloading Packages from Internet Including YouTube.It is also used for Port scanning, IP-Finding it is also useful for checking ping and net speed with the functionality of scanning the net speed by selecting the best server. It also has Host IP finding capability by Host it can also have commands used in Normal Terminals.
+Command-Line is an open-source software for pentesters and ethical hackers. It contains many functionalities which helps ethical hackers. It is a CLI based application used for checking networks and IP's. It also supports functionalities like downloading packages from internet including YouTube. It is also used for port scanning and IP-finding. It is also useful for checking ping and net speed with the functionality of scanning the net speed by selecting the best server. It also has host IP finding capability by host. It also has commands used in normal Terminals.
 
 
 
@@ -11,54 +11,54 @@ Command-Line is an Open-Source Software for Pentesters and Ethical Hackers it co
 
 ## Features
 
-- Network Analysis.
+- Network analysis.
 - Finding website Ip.
 - Ip configuration.
-- DDoS Simulator
-- Host ip finder.
-- YouTube video Downloader.
+- DDoS simulator
+- Host IP finder.
+- YouTube video downloader.
 - Pinging websites.
-- Scan Ports
-- Wifi password Extactor.
-- Giga Byte & Mega Byte Convertor.
-- Network Speed test.
-- Shutdown Options.
-- Git-Repository Clonner.
-- IP Tracker.
-- Giga Byte & Mega Byte Convertor.
-- All basic commands are also Included like in other Terminals
-- Show near by networks.
+- Scan ports.
+- Wifi password extactor.
+- Gigabyte to Megabyte convertor.
+- Network speed test.
+- Shutdown options.
+- Git-repository cloner.
+- IP tracker.
+- Megabyte to Gigabyte Convertor.
+- All basic commands are also included like in other Terminals
+- Show nearby networks.
 
 
-## Installation :-
+## Installation:
 
-Clone The Repository :-
+Clone the repository:
 
 ```bash
-  git Clone https://github.com/mynameissami/CommandLine.git
+  git clone https://github.com/mynameissami/CommandLine.git
   
 ```
-Install The Requirements :-
+Install the requirements:
 ```bash
   cd CommandLine
   pip install -r Requirements.txt
 ```
-Script Is Ready To Run :-
+Script is ready to run:
 ```bash
   python3 CommandLine.py
 ```
-or :-
+or:
 ```bash
   python CommandLine.py
 ```
-## Documentation :-
+## Documentation:
 
-Commands  :-
+Commands:
 ```bash
 Use 'help' command to see all the availaible options.
 For more Info about commands and their errors look at Commands.chm file
 ```
-Mostly Used Commands  :-
+Mostly Used Commands:
 ```bash
 [#] "whoami" to see about the user.                   
 [#] "create.file" to Create a new file.               
@@ -75,7 +75,7 @@ Mostly Used Commands  :-
 [#] "show.scritps" to show all scripts.               
 [#] "shutdown/?" to show shutdown commands.
 ```
-All Commands :-
+All Commands:
 ```bash
 [#] "root.showip" for showing ip adrees of this device.             
 [#] "wifi/nby" for all nearby located wifi.                         
@@ -112,4 +112,5 @@ Install From SourceForge
 ## Authors
 
 - [@mynameissami](https://github.com/mynameissami)
+- [@SteveWyntontje](https://github.com/SteveWyntontje)
 
