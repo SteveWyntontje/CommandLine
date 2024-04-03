@@ -1033,7 +1033,7 @@ def commandlineupdate():
             ask_to_update = input("Do you want to update? (Y/N): ")
             if ask_to_update == "Y" or ask_to_update == "y":
               try:   
-              wget.download(
+                wget.download(
                     "This link is hidden")
               except:
                pass
