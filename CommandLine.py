@@ -932,7 +932,7 @@ This software is licensed to {getpass.getuser()}.
         elif z == "help" or z == "?":
             print("""OPTIONS TO CHOOSE WITH
 |------------------------------------------------------|
-|Basic Commands :-                                     |
+|Basic Commands:	                                     |
 |[*] "whoami" to see about the user.                   |
 |[*] "create.file" to Create a new file.               |
 |[*] "del.file" to delete a file.                      |
@@ -953,10 +953,10 @@ This software is licensed to {getpass.getuser()}.
 
         # If user will input a  wrong command:
         else:
-            print("Command not found! If you need Help use 'help' or '?'")
+            print("Command not found! If you need help use 'help' or '?'")
             return z
     except:
-        user_input = input("Do you want to exit the console? y or n :")
+        user_input = input("Do you want to exit the console? [y or n] :")
         if user_input == "y":
             print("Exiting console...")
             exit()
@@ -982,7 +982,7 @@ def commandlineupdate():
         ver_rem_strip = pr_ver_replace.replace(' ', '')
         web_ver_replace = version_check.translate(str.maketrans(coderp))
         web_rem_strip = web_ver_replace.replace(' ', '')
-        print(f"The Latest version is : {web_rem_strip}")
+        print(f"The latest version is : {web_rem_strip}")
         sleep(0.5)
         print(f"Program version is    : {ver_rem_strip}")
         sleep(1)
@@ -1028,8 +1028,8 @@ def commandlineupdate():
         soup = BeautifulSoup(resp.text, 'html.parser')
         old_ver_check = soup.find("textarea").text
         if Program_Ver in old_ver_check:
-            print(f"New Update is Found -> {web_rem_strip2}")
-            notification_c(f"The new update is Found -> {web_rem_strip2} ")
+            print(f"New update is found -> {web_rem_strip2}")
+            notification_c(f"The new update is found -> {web_rem_strip2} ")
             ask_to_update = input("Do you want to update? (Y/N): ")
             if ask_to_update == "Y" or ask_to_update == "y":
               try:   
